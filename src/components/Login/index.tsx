@@ -29,7 +29,12 @@ export default function LoginComponent() {
               Forgot your password?
             </Link>
           </div>
-          <Button className="buttons" size="large" variant="contained" disabled>
+          <Button
+            className="buttons"
+            size="large"
+            variant="contained"
+            href="/card"
+          >
             Sign In
           </Button>
         </Stack>
