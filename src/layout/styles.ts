@@ -87,6 +87,10 @@ const GlobalStyle = createGlobalStyle`
     height: 150px;
   }
 
+  .logoHeader {
+    height: 12vh;
+  }
+
   .logoSpin {
     margin-bottom: -40px;
     height: 150px;
@@ -129,12 +133,40 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .cardPage {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 93vh;
     background-color: white;
     .column-content {
       display: flex;
     }
+  }
+
+  .header {
+    background-color: #292929;
+    height: 7vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .profile {
+    padding-right: 4%;
+  }
+
+  .name {
+    padding-left: 4%;
+  }
+
+  .welcome {
+    display: flex;
+    align-items: center;
+    color: white;
+  }
+
+  .profileNameHeader {
+    margin-left: 8px;
+    font-weight: bolder;
   }
 
   .OptionsBtn {
