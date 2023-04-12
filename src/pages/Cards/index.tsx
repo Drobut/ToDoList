@@ -5,6 +5,8 @@ import { addTask, deleteTask, onChange } from "../../utils";
 import Drop from "../../components/Cards/Drop";
 import Drag from "../../components/Cards/Drag";
 import Column from "../../components/Cards/Column";
+import Header from "../../components/Header/Header";
+import SpeedDialTooltipOpen from "../../components/Interface/ToolTip";
 
 export default function Cards() {
   const [data, setData] = useState(initialData);
@@ -28,30 +30,34 @@ export default function Cards() {
   };
 
   return (
-    <div className="cardPage">
-      <DragDropContext onDragEnd={onDragEnd}>
-        <Drop
-          className="column-content"
-          droppableId="all-columns"
-          type="COLUMN"
-          direction="horizontal"
-        >
-          {data.columnOrder.map((columnId, index) => {
-            const column = data.columns[columnId];
-            const tasks = column.taskIds.map((taskId) => data.tasks[taskId]);
-            return (
-              <Drag
-                key={columnId}
-                draggableId={columnId}
-                index={index}
-                dragAll={false}
-              >
-                <Column column={column} tasks={tasks} />
-              </Drag>
-            );
-          })}
-        </Drop>
-      </DragDropContext>
-    </div>
+    <>
+      <Header />
+      <div className="cardPage">
+        <SpeedDialTooltipOpen />
+        <DragDropContext onDragEnd={onDragEnd}>
+          <Drop
+            className="column-content"
+            droppableId="all-columns"
+            type="COLUMN"
+            direction="horizontal"
+          >
+            {data.columnOrder.map((columnId, index) => {
+              const column = data.columns[columnId];
+              const tasks = column.taskIds.map((taskId) => data.tasks[taskId]);
+              return (
+                <Drag
+                  key={columnId}
+                  draggableId={columnId}
+                  index={index}
+                  dragAll={false}
+                >
+                  <Column column={column} tasks={tasks} />
+                </Drag>
+              );
+            })}
+          </Drop>
+        </DragDropContext>
+      </div>
+    </>
   );
 }
