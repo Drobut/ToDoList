@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -128,6 +128,21 @@ const GlobalStyle = createGlobalStyle`
     flex-direction: column;
   }
 
+  .cardPage {
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    .column-content {
+      display: flex;
+    }
+  }
+
+  .OptionsBtn {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+
   .lds-ellipsis {
     display: inline-block;
     position: relative;
@@ -182,6 +197,43 @@ const GlobalStyle = createGlobalStyle`
     100% {
       transform: translate(24px, 0);
     }
+  }
+`;
+
+export const ColumnStyled = styled.div`
+  width: 20vw;
+  min-height: auto;
+  border: 1px solid lightgray;
+  background-color: #fff;
+  margin-right: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .task-drop {
+    padding: 5px;
+    width: 95%;
+  }
+  .card {
+    width: 100%;
+    height: 27vh;
+    border: 1px solid lightgray;
+    margin-bottom: 0.5em;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5%;
+  }
+
+  .select {
+    height: 20px;
+    width: 100%;
+    background-color: rebeccapurple;
+  }
+
+  .drag {
+    display: flex;
+    justify-content: center;
   }
 `;
 
