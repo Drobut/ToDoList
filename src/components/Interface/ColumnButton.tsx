@@ -8,7 +8,7 @@ import Divider from "@mui/material/Divider";
 import ArchiveIcon from "@mui/icons-material/Archive";
 import FileCopyIcon from "@mui/icons-material/FileCopy";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
-import ModeIcon from "@mui/icons-material/Mode";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 const StyledMenu = styled((props: MenuProps) => (
   <Menu
@@ -53,7 +53,7 @@ const StyledMenu = styled((props: MenuProps) => (
   },
 }));
 
-export default function OptionsButton() {
+export default function ColumnButton() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -73,8 +73,15 @@ export default function OptionsButton() {
         variant="contained"
         disableElevation
         onClick={handleClick}
+        sx={{
+          width: "20px",
+          padding: "0px",
+          minWidth: "0px",
+          backgroundColor: "#292929;",
+          "&:hover": { backgroundColor: "#292929;" },
+        }}
       >
-        <ModeIcon />
+        <MoreVertIcon sx={{ fill: "white" }} />
       </Button>
       <StyledMenu
         id="demo-customized-menu"
