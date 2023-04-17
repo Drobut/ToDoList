@@ -50,6 +50,7 @@ export default function Cards() {
                   draggableId={columnId}
                   index={index}
                   dragAll={false}
+                  className="DragsProps"
                 >
                   <Column column={column} tasks={tasks} />
                 </Drag>

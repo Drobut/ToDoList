@@ -1,15 +1,25 @@
 import { ColumnProps } from "../@types";
 import Drop from "./Drop";
 import Drag from "./Drag";
-import { TextField } from "@mui/material";
 import { ColumnStyled } from "../../layout/styles";
-import OptionsButton from "../Interface/OptionsButton";
+import ColumnButton from "../Interface/ColumnButton";
+import TaskButton from "../Interface/TaskButton";
+import ShortTextIcon from "@mui/icons-material/ShortText";
 
 export default function Column({ column, tasks, provided }: ColumnProps) {
   return (
     <ColumnStyled>
-      <div {...provided?.dragHandleProps} className="select"></div>
-      <TextField id="filled-basic" label={column.title} variant="outlined" />
+      <div {...provided?.dragHandleProps} className="select">
+        <ShortTextIcon sx={{ fill: "#939393" }} />
+      </div>
+      <div className="ColumnBtn">
+        <textarea
+          className="columnTitle"
+          placeholder="Column Title"
+          defaultValue={column.title}
+        ></textarea>
+        <ColumnButton />
+      </div>
       <Drop droppableId={column.id} type="TASK" className="task-drop">
         {tasks.map((task, index) => (
           <Drag
@@ -19,22 +29,19 @@ export default function Column({ column, tasks, provided }: ColumnProps) {
             key={task.id}
           >
             <div className="card">
-              <div className="OptionsBtn">
-                <TextField
-                  id="filled-basic"
-                  label={task.id}
-                  variant="outlined"
-                />
-                <OptionsButton />
+              <div className="TaskBtn">
+                <textarea
+                  className="contentTitle"
+                  placeholder="Task Title"
+                  defaultValue={task.id}
+                ></textarea>
+                <TaskButton />
               </div>
-              <TextField
-                id="standard-multiline-static"
-                label="Multiline"
-                multiline
-                rows={4}
+              <textarea
+                className="contentText"
+                placeholder="Enter your notes here"
                 defaultValue={task.content}
-                variant="standard"
-              />
+              ></textarea>
             </div>
           </Drag>
         ))}

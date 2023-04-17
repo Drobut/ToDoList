@@ -133,7 +133,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .cardPage {
-    width: 100%;
+    width: 100vw;
     height: 93vh;
     background-color: white;
     .column-content {
@@ -169,10 +169,69 @@ const GlobalStyle = createGlobalStyle`
     font-weight: bolder;
   }
 
-  .OptionsBtn {
+  .TaskBtn {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     width: 100%;
+    background: #7843e6;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+
+  .ColumnBtn {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    background: #292929;;
+  }
+
+  .DragsProps {
+    margin: 4px;
+  }
+
+  .contentText {
+    color: #919191;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 5px;
+    height: 100px;
+    border-style: none;
+    width: 180px;
+    resize: none;
+  }
+
+  .contentTitle {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+    width: 150px;
+    border-style: none;
+    height: 19px;
+    resize: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background: #7843e6;
+    margin-left: 20px;
+  }
+
+  .columnTitle {
+    color: #ffffff;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+    width: 98%;
+    border-style: none;
+    height: 20px;
+    background: #292929;
+    resize: none;
   }
 
   .lds-ellipsis {
@@ -233,7 +292,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export const ColumnStyled = styled.div`
-  width: 20vw;
+  width: 100%;
   min-height: auto;
   border: 1px solid lightgray;
   background-color: #fff;
@@ -241,31 +300,37 @@ export const ColumnStyled = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 5px;
+
   .task-drop {
-    padding: 5px;
     width: 95%;
   }
   .card {
-    width: 100%;
-    height: 27vh;
     border: 1px solid lightgray;
     margin-bottom: 0.5em;
     background-color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 5%;
+    border-radius: 5px;
+    margin: 5px;
   }
 
   .select {
     height: 20px;
     width: 100%;
-    background-color: rebeccapurple;
+    background-color: #292929;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .drag {
     display: flex;
     justify-content: center;
+    padding: 2%;
   }
 `;
 
